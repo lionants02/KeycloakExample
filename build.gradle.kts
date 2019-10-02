@@ -56,7 +56,11 @@ dependencies {
     compile("org.eclipse.jetty:jetty-server:$jettyVersion")
     compile("org.eclipse.jetty:jetty-servlet:$jettyVersion")
     compile("org.eclipse.jetty:jetty-http:$jettyVersion")
-    compile("org.keycloak:keycloak-jetty94-adapter:7.0.0")
+    compile("org.keycloak:keycloak-admin-client:7.0.0")
+
+    val scribeVersion = "6.8.1"
+    compile("com.github.scribejava:scribejava-apis:$scribeVersion")
+    compile("com.github.scribejava:scribejava-core:$scribeVersion")
 
     testImplementation("junit:junit:4.12")
     testImplementation("org.mockito:mockito-core:2.28.2")
