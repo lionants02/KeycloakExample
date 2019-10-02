@@ -78,7 +78,7 @@ tasks.named<Jar>("jar") {
     this.archiveName = "${project.name}.jar"
     this.destinationDir = file("$rootDir/build/bin")
 
-    manifest { attributes["Main-Class"] = "hii.thing.api.ThingApiServer" }
+    manifest { attributes["Main-Class"] = "max.keycloak.example.Main" }
 
     exclude(
         "META-INF/*.RSA",
