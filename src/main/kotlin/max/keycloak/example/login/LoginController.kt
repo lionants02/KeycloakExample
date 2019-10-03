@@ -2,6 +2,7 @@ package max.keycloak.example.login
 
 import com.github.scribejava.apis.KeycloakApi
 import com.github.scribejava.core.builder.ServiceBuilder
+import com.github.scribejava.core.model.OAuth2AccessToken
 import com.github.scribejava.core.model.OAuthRequest
 import com.github.scribejava.core.model.Verb
 import max.keycloak.example.apiKey
@@ -19,7 +20,7 @@ class LoginController {
         .callback(callback)
         .build(KeycloakApi.instance(baseUrl, realm))
 
-    fun login(loginBody: LoginBody): String {
+    fun login(loginBody: LoginBody): OAuth2AccessToken {
         logger.info { "=== Keyloack's OAuth Workflow ===" }
 
         // Obtain the Authorization URL
@@ -48,7 +49,7 @@ class LoginController {
         logger.info { response.body }
 
         logger.info { "Thats it man! Go and build something awesome with ScribeJava! :)" }
-        return accessToken.rawResponse
+        return accessToken!!
     }
 
     companion object {
