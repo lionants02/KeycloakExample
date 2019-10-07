@@ -1,4 +1,4 @@
-package max.keycloak.example.login
+package max.keycloak.example.rest.login
 
 import max.keycloak.example.getLogger
 import javax.ws.rs.Consumes

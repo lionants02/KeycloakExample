@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package max.keycloak.example.configjetty.responsefilter
+package max.keycloak.example.rest.config.responsefilter
 
 import max.keycloak.example.getLogger
 import javax.ws.rs.WebApplicationException

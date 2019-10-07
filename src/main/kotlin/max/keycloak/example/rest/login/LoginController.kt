@@ -1,4 +1,4 @@
-package max.keycloak.example.login
+package max.keycloak.example.rest.login
 
 import com.github.scribejava.apis.KeycloakApi
 import com.github.scribejava.core.builder.ServiceBuilder

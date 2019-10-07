@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package max.keycloak.example.configjetty.cache
+package max.keycloak.example.rest.config.cache
 
 import java.lang.annotation.Retention
 import java.lang.annotation.RetentionPolicy

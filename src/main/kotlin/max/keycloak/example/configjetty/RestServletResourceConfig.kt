@@ -15,16 +15,18 @@
  * limitations under the License.
  */
 
-package max.keycloak.example.configjetty.responsefilter
+package max.keycloak.example.configjetty
 
-import javax.ws.rs.ForbiddenException
-import javax.ws.rs.core.Response
-import javax.ws.rs.ext.ExceptionMapper
-import javax.ws.rs.ext.Provider
+import org.glassfish.jersey.server.ResourceConfig
+import org.glassfish.jersey.server.filter.CsrfProtectionFilter
+import org.glassfish.jersey.server.filter.RolesAllowedDynamicFeature
 
-@Provider
-class ForbiddenFilter : ExceptionMapper<ForbiddenException> {
-    override fun toResponse(exception: ForbiddenException): Response {
-        return ErrorDetail.build(exception)
+internal class RestServletResourceConfig : ResourceConfig() {
+
+    init {
+        packages("max.keycloak.example.rest")
+
+        register(RolesAllowedDynamicFeature::class.java)
+        register(CsrfProtectionFilter::class.java)
     }
 }

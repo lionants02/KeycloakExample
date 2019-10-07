@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package max.keycloak.example.configjetty.cache
+package max.keycloak.example.rest.config.cache
 
 import javax.ws.rs.container.ContainerRequestContext
 import javax.ws.rs.container.ContainerResponseContext

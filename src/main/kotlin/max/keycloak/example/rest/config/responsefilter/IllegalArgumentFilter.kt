@@ -15,16 +15,22 @@
  * limitations under the License.
  */
 
-package max.keycloak.example.configjetty.responsefilter
+package max.keycloak.example.rest.config.responsefilter
 
-import javax.ws.rs.ClientErrorException
+import javax.ws.rs.WebApplicationException
 import javax.ws.rs.core.Response
 import javax.ws.rs.ext.ExceptionMapper
 import javax.ws.rs.ext.Provider
 
 @Provider
-class IllegalStateExceptionFilter : ExceptionMapper<IllegalStateException> {
-    override fun toResponse(exception: IllegalStateException): Response {
-        return ErrorDetail.build(ClientErrorException(exception.message, 400), exception)
+class IllegalArgumentFilter : ExceptionMapper<IllegalArgumentException> {
+    override fun toResponse(exception: IllegalArgumentException): Response {
+        val message = with(exception.message) {
+            if (this != null && endsWith("Sex.NULL")) {
+                "sex รองรับการใส่ข้อมูลด้วย MALE FEMALE UNKNOWN เป็นตัวใหญ่ทั้งหมดเท่านั้น"
+            } else
+                exception.message
+        }
+        return ErrorDetail.build(WebApplicationException(message, exception, 400))
     }
 }

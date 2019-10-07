@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package max.keycloak.example.configjetty.responsefilter
+package max.keycloak.example.rest.config.responsefilter
 
 import javax.ws.rs.ClientErrorException
 import javax.ws.rs.core.Response
@@ -23,8 +23,8 @@ import javax.ws.rs.ext.ExceptionMapper
 import javax.ws.rs.ext.Provider
 
 @Provider
-class ClassCastExceptionFilter : ExceptionMapper<ClassCastException> {
-    override fun toResponse(exception: ClassCastException): Response {
-        return ErrorDetail.build(ClientErrorException(exception.message, 500), exception)
+class NoSuchElementExceptionFilter : ExceptionMapper<NoSuchElementException> {
+    override fun toResponse(exception: NoSuchElementException): Response {
+        return ErrorDetail.build(ClientErrorException(exception.message, 400), exception)
     }
 }

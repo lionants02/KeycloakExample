@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package max.keycloak.example.configjetty.cache
+package max.keycloak.example.rest.config.cache
 
-import max.keycloak.example.configjetty.GsonJerseyProvider
+import max.keycloak.example.rest.config.GsonJerseyProvider
 import java.security.MessageDigest
 import javax.ws.rs.container.ContainerRequestContext
 import javax.ws.rs.container.ContainerResponseContext

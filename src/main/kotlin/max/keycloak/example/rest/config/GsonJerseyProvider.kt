@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package max.keycloak.example.configjetty
+package max.keycloak.example.rest.config
 
 import com.fatboyindustrial.gsonjavatime.InstantConverter
 import com.fatboyindustrial.gsonjavatime.LocalDateConverter
@@ -27,8 +27,8 @@ import com.fatboyindustrial.gsonjavatime.ZonedDateTimeConverter
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
-import max.keycloak.example.configjetty.GsonJerseyProvider.Companion.hiiGson
 import max.keycloak.example.getLogger
+import max.keycloak.example.rest.config.GsonJerseyProvider.Companion.hiiGson
 import java.io.IOException
 import java.io.InputStream
 import java.io.InputStreamReader

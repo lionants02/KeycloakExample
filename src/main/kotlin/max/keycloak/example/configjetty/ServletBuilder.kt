@@ -23,18 +23,19 @@ import org.glassfish.jersey.servlet.ServletContainer
 
 internal object ServletBuilder {
 
-    private const val PATH_SPEC = "/v1/*"
+    private const val REST_PATH_SPEC = "/v1/*"
+    private const val JSP_PATH_SPEC = "/jsp/*"
     private const val ROOT_PATH = ""
 
     fun build(): ServletContextHandler {
         return ServletContextHandler(ServletContextHandler.SESSIONS).apply {
             contextPath = ROOT_PATH
-            addServlet(thingServletHolder(), PATH_SPEC)
+            addServlet(thingServletHolder(), REST_PATH_SPEC)
         }
     }
 
     private fun thingServletHolder(): ServletHolder {
-        return ServletHolder(ServletContainer(ServletResourceConfig())).apply {
+        return ServletHolder(ServletContainer(RestServletResourceConfig())).apply {
             initOrder = 0
         }
     }
