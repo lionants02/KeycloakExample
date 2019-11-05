@@ -56,6 +56,12 @@ dependencies {
     compile("org.eclipse.jetty:jetty-server:$jettyVersion")
     compile("org.eclipse.jetty:jetty-servlet:$jettyVersion")
     compile("org.eclipse.jetty:jetty-http:$jettyVersion")
+    compile("org.eclipse.jetty:jetty-webapp:$jettyVersion")
+    compile("org.eclipse.jetty:jetty-annotations:$jettyVersion")
+    compile("org.eclipse.jetty:apache-jsp:$jettyVersion")
+
+    compile("jstl:jstl:1.2")
+
     compile("org.keycloak:keycloak-admin-client:7.0.0")
 
     val scribeVersion = "6.8.1"
